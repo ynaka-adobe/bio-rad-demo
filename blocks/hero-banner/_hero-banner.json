@@ -1,0 +1,57 @@
+{
+  "definitions": [
+    {
+      "title": "Hero Banner",
+      "id": "hero-banner",
+      "model": "hero-banner",
+      "plugins": {
+        "da": {
+          "unsafeHTML": "<div class=\"hero-banner\"><div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\"></picture></div></div><div><div><h1></h1><p></p><p><a href=\"\">Learn More</a></p></div></div></div>",
+          "fields": [
+            {
+              "name": "image",
+              "selector": "div:first-child>div>picture>img[src]"
+            },
+            {
+              "name": "imageAlt",
+              "selector": "div:first-child>div>picture>img[alt]"
+            },
+            {
+              "name": "text",
+              "selector": "div:last-child>div"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "hero-banner",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Alt",
+          "value": ""
+        },
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
